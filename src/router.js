@@ -11,8 +11,6 @@ import Install from './components/user/install.vue'
 import Notes from './components/user/notes.vue'
 import UpdatePwd from './components/user/updatePwd.vue'
 import TimeTask from './components/user/timeTask.vue'
-import FileUpload from './components/user/fileUpload.vue'
-import PoiExcel from './components/user/poiExcel.vue'
 
 import MenuManager from './components/permission/menuManager.vue'
 import PerManager from './components/permission/perManager.vue'
@@ -23,7 +21,6 @@ import Echarts from './components/info/echarts.vue'
 
 import HomeTopView from './components/help/homeTopView.vue'
 import SystemUpdateLog from './components/help/systemUpdateLog.vue'
-import RightAd from './components/help/rightAd.vue'
 
 import Label from './components/ariticle/label.vue'
 import Sort from './components/ariticle/sort.vue'
@@ -34,6 +31,8 @@ import Board from './views/ariticle/board.vue'
 import Upload from './views/ariticle/upload.vue'
 import Publish from './views/ariticle/publish.vue'
 import Chatroom from './views/ariticle/chatroom.vue'
+
+
 
 Vue.use(Router)
 
@@ -107,15 +106,9 @@ export default new Router({
             },{
                 path: '/user/timeTask',
                 component: TimeTask
-            },{
-                path: '/user/fileUpload',
-                component: FileUpload
             }, {
                 path: '/user/updatePwd',
                 component: UpdatePwd
-            }, {
-                path: '/user/poiExcel',
-                component: PoiExcel
             },{
                 path: '/info/loginlog',
                 component: Loginlog
@@ -129,9 +122,6 @@ export default new Router({
                 path: '/help/systemUpdateLog',
                 component: SystemUpdateLog
             },{
-                path: '/help/rightAd',
-                component: RightAd
-            },{
                 path: '/ariticle/label',
                 component: Label
             },{
@@ -143,7 +133,7 @@ export default new Router({
             }]
         }, {
             path: '*',
-            redirect: '/homes'
+            component: Homes
         }
     ]
 })

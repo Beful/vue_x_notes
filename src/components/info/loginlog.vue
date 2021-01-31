@@ -5,7 +5,9 @@
             <el-breadcrumb-item>登录日志</el-breadcrumb-item>
         </el-breadcrumb><br>
 
-        <el-card>
+        <el-button type="primary" icon="el-icon-document" style="float: right;margin-right:150px" @click="daochu">导出</el-button><br><br>
+        
+        <el-card>    
             <!-- 表格 -->
             <el-table :data="logList" stripe style="width: 100%">
                 <el-table-column type="index" prop="id" label="NO."></el-table-column>
@@ -13,7 +15,7 @@
                 <el-table-column prop="ip" label="ip"></el-table-column>
                 <el-table-column prop="createTime" label="时间"></el-table-column>
                 <el-table-column prop="title" label="标题"></el-table-column>
-                 <el-table-column prop="content" label="内容"></el-table-column>
+                <el-table-column prop="content" label="内容"></el-table-column>
             </el-table>
             <!--  分页   -->
             <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" background
@@ -67,6 +69,9 @@ export default{
             this.queryInfo.pagenum = newnum;
             this.getLogList();
         },
+        daochu(){
+            window.location.href = '/notes/log/exportLog'
+        }
     }
 }
 </script>
